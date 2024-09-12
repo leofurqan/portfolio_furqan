@@ -35,6 +35,7 @@ INSTALLED_APPS = [
     'portfolio.apps.PortfolioConfig',
     'blogs.apps.BlogsConfig',
     'user_register.apps.UserRegisterConfig',
+    'countries.apps.CountriesConfig',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
