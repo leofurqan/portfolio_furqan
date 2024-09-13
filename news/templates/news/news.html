@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News App</title>
+	{% load static %}
+	<link rel="icon" type="image/png" href="{% static 'news/images/icons/favicon.png' %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'news/vendor/bootstrap/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'news/fonts/fontawesome-5.0.8/css/fontawesome-all.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'news/fonts/iconic/css/material-design-iconic-font.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'news/vendor/animate/animate.css' %}">	
+    <link rel="stylesheet" type="text/css" href="{% static 'news/vendor/css-hamburgers/hamburgers.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'news/vendor/animsition/css/animsition.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'news/css/util.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'news/css/main.css' %}">
+</head>
+<body>
+    <!-- Latest -->
+	<section class="bg0 p-t-50 p-b-90">
+		<div class="container">
+			<div class="row justify-content-center">
+				<div class="col-md-12 col-lg-12 p-b-50">
+					<div class="p-r-10 p-r-0-sr991">
+						<div class="how2 how2-cl4 flex-s-c">
+							<h3 class="f1-m-2 cl3 tab01-title">
+								Latest Articles
+							</h3>
+						</div>
+
+						<div class="p-b-40">
+                            {% for n in news %}
+							<!-- Item post -->
+                                <div class="flex-wr-sb-s p-t-40 p-b-15 how-bor2">
+                                    <a href="blog-detail-01.html" class="size-w-8 wrap-pic-w hov1 trans-03 w-full-sr575 m-b-25">
+                                        <img src="{{n.image}}" alt="IMG">
+                                    </a>
+
+                                    <div class="size-w-9 w-full-sr575 m-b-25">
+                                        <h5 class="p-b-12">
+                                            <a href="blog-detail-01.html" class="f1-l-1 cl2 hov-cl10 trans-03 respon2">
+                                               {{n.title}}
+                                            </a>
+                                        </h5>
+
+                                        <div class="cl8 p-b-18">
+                                            <a href="#" class="f1-s-4 cl8 hov-cl10 trans-03">
+                                                by {{n.author}}
+                                            </a>
+
+                                            <span class="f1-s-3 m-rl-3">
+                                                -
+                                            </span>
+
+                                            <span class="f1-s-3">
+                                                {{n.publish_date}}
+                                            </span>
+                                        </div>
+
+                                        <p class="f1-s-1 cl6 p-b-24">
+                                            {{n.summary}}
+                                        </p>
+
+                                        <a href="{{n.url}}" class="f1-s-1 cl9 hov-cl10 trans-03">
+                                            Read More
+                                            <i class="m-l-2 fa fa-long-arrow-alt-right"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            {% endfor %}
+						</div>
+
+						<!-- <a href="#" class="flex-c-c size-a-13 bo-all-1 bocl11 f1-m-6 cl6 hov-btn1 trans-03">
+							Load More
+						</a> -->
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<script src="{% static 'news/vendor/jquery/jquery-3.2.1.min.js' %}"></script>
+    <script src="{% static 'news/vendor/animsition/js/animsition.min.js' %}"></script>
+    <script src="{% static 'news/vendor/bootstrap/js/popper.js' %}"></script>
+    <script src="{% static 'news/vendor/bootstrap/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'news/js/main.js' %}"></script>
+</body>
+</html>

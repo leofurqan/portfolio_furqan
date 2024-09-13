@@ -22,5 +22,6 @@ urlpatterns = [
     path('', include('portfolio.urls')),
     path('blogs/', include('blogs.urls')),
     path('register/', include('user_register.urls')),
-    path('countries/', include('countries.urls'))
+    path('countries/', include('countries.urls')),
+    path('news/', include('news.urls'))
 ]
